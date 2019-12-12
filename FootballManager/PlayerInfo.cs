@@ -44,10 +44,21 @@ namespace FootballManager
                 }
                 catch(Exception ex1)
                 {
-                    photoBox.Load("https://cdn.sofifa.org/players/10/notfound_0.png");                
+                    try
+                    {
+                        photoBox.Load("https://cdn.sofifa.org/players/10/notfound_0.png");
+                    }
+                    catch (System.Net.WebException ex2)
+                    {
+
+                    }
                 }
             }
-            flagBox.Load(player.flagURL);
+            try
+            {
+                flagBox.Load(player.flagURL);
+            }
+            catch  (System.Net.WebException exc3) { }
             photoBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 

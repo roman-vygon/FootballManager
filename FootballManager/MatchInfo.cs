@@ -25,8 +25,15 @@ namespace FootballManager
             time = timeLabel;            
             homeTeamName.Text = match.homeTeam.name;
             guestTeamName.Text = match.guestTeam.name;
-            homeTeamLogo.Load(match.homeTeam.logoURL);
-            guestTeamLogo.Load(match.guestTeam.logoURL);
+            try
+            {
+                homeTeamLogo.Load(match.homeTeam.logoURL);
+                guestTeamLogo.Load(match.guestTeam.logoURL);
+            }
+            catch (System.Net.WebException exc)
+            {
+
+            }
             dateLabel.Text = Convert.ToString(new DateTime(match.time));
 
             string score1, score2, penaltyScore1, penaltyScore2;

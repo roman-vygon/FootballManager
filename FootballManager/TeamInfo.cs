@@ -29,7 +29,14 @@ namespace FootballManager
             time = timeLabel;
             playersList.DisplayMember = "name";
             playersList.DataSource = team.players;
-            logoBox.Load(team.logoURL);
+            try
+            {
+                logoBox.Load(team.logoURL);
+            }
+            catch (System.Net.WebException exc)
+            {
+
+            }
         }
 
         private void PlayersList_MouseDoubleClick(object sender, MouseEventArgs e)

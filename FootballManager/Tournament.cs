@@ -57,34 +57,39 @@ namespace FootballManager
             return this.name;
         }
 
-        public Tournament(List<Team> teams, string name, bool simulate)
+        public void generate()
         {
-            this.simulate = simulate;
-            this.name = name;
             Random rnd = new Random();
-            this.participants = teams;
-            teams.OrderBy(a => Guid.NewGuid()).ToList();
+            participants.OrderBy(a => Guid.NewGuid()).ToList();
             matches.Add(new List<Match>());
             Int64 maxTime = -1;
-            for (int i = 0; i < teams.Count / 2; ++i)
-            {               
+            for (int i = 0; i < participants.Count / 2; ++i)
+            {
                 Int64 matchTime = Storage.time + Convert.ToInt64(rnd.Next(5, 15)) * 600000000000;
                 maxTime = Math.Max(maxTime, matchTime);
-                matches[0].Add(new Match(matchTime, teams[i * 2], teams[i * 2 + 1]));
+                matches[0].Add(new Match(matchTime, participants[i * 2], participants[i * 2 + 1]));
             }
             stageMaxTimes.Add(maxTime);
             int k = 0;
-            while(matches[k].Count > 1)
+            while (matches[k].Count > 1)
             {
                 maxTime = -1;
                 k++;
                 matches.Add(new List<Match>());
-                for (int i = 0; i < matches[k-1].Count / 2; ++i)
+                for (int i = 0; i < matches[k - 1].Count / 2; ++i)
                 {
                     Int64 matchTime = stageMaxTimes[stageMaxTimes.Count - 1] + Convert.ToInt64(rnd.Next(5, 15)) * 600000000000;
                     matches[k].Add(new Match(matchTime, Storage.defaultTeam, Storage.defaultTeam));
-                 }
+                }
             }
+        }
+        public Tournament(List<Team> teams, string name, bool simulate)
+        {
+            this.simulate = simulate;
+            this.name = name;
+            
+            this.participants = teams;
+            generate();
         }
     }
 }

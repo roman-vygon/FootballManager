@@ -135,6 +135,7 @@ namespace FootballManager
         {
             this.Hide();
             Administration req = new Administration();
+            req.Closed += (s, args) => this.Show();
             req.Show();
         }
     }

@@ -76,5 +76,10 @@ namespace FootballManager
             Match match = matchesList.Items[matchesList.SelectedIndex] as Match;
           
         }
+
+        private void Button1_Click_1(object sender, EventArgs e)
+        {
+            tournament.generate();
+        }
     }
 }

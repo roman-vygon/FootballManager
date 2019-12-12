@@ -36,6 +36,7 @@
             this.rightArrowButton = new System.Windows.Forms.Button();
             this.stageLabel = new System.Windows.Forms.Label();
             this.timeLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // matchesList
@@ -109,11 +110,22 @@
             this.timeLabel.TabIndex = 6;
             this.timeLabel.Text = "timeLabel";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(610, 453);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Сгенерировать матчи";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click_1);
+            // 
             // TournamentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 488);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.stageLabel);
             this.Controls.Add(this.rightArrowButton);
@@ -140,5 +152,6 @@
         private System.Windows.Forms.Button rightArrowButton;
         private System.Windows.Forms.Label stageLabel;
         private System.Windows.Forms.Label timeLabel;
+        private System.Windows.Forms.Button button1;
     }
 }

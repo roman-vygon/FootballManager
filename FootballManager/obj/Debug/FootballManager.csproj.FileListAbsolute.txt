@@ -7,7 +7,6 @@ C:\Users\Admin\source\repos\FootballManager\FootballManager\obj\Debug\FootballMa
 C:\Users\Admin\source\repos\FootballManager\FootballManager\obj\Debug\FootballManager.Properties.Resources.resources
 C:\Users\Admin\source\repos\FootballManager\FootballManager\obj\Debug\FootballManager.TeamInfo.resources
 C:\Users\Admin\source\repos\FootballManager\FootballManager\obj\Debug\FootballManager.csproj.GenerateResource.cache
-C:\Users\Admin\source\repos\FootballManager\FootballManager\obj\Debug\FootballManager.csproj.CoreCompileInputs.cache
 C:\Users\Admin\source\repos\FootballManager\FootballManager\obj\Debug\FootballManager.exe
 C:\Users\Admin\source\repos\FootballManager\FootballManager\obj\Debug\FootballManager.pdb
 C:\Users\Admin\source\repos\FootballManager\FootballManager\obj\Debug\FootballManager.TournamentInfo.resources

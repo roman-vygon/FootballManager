@@ -69,11 +69,18 @@ namespace FootballManager
                         int age = 0, overall = 0, potential = 0;
                         string name = "", photoURL = "", nationality = "", flagURL = "", foot = "", height = "", weight = "";
                         double stamina = 0;
-                        logoURL = values[11].Replace("/2/","/10/");
-                        name = values[3];                  
-                       
+
+                        String playerNumber = values[2];
+                        String teamNumber = values[11].Split('/')[6].Split('.')[0];
+                        while (playerNumber.Length != 6)
+                            playerNumber = '0' + playerNumber;
+                            
+
+                        logoURL = String.Format("https://cdn.sofifa.com/teams/{0}/light_120.png", teamNumber);
+                        name = values[3];
+                    
                         age = Convert.ToInt32(values[4]);
-                        photoURL = values[5];
+                        photoURL = String.Format("https://cdn.sofifa.com/players/{0}/{1}/20_120.png", playerNumber[0].ToString() + playerNumber[1].ToString() + playerNumber[2].ToString(), playerNumber[3].ToString() + playerNumber[4].ToString() + playerNumber[5].ToString()); ;
                         nationality = values[6];
                         flagURL = values[7];
                         overall = Convert.ToInt32(values[8]);

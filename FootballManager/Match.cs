@@ -136,10 +136,27 @@ namespace FootballManager
                     penaltyHomeTeam = penaltyGuestTeam - 1;
             }
         }
-        public void playRandom()
+        private int generatePoisson(int lambda)
         {
             Random rnd = new Random();
-            int numEvents = rnd.Next(30, 50);
+            int m = 0;
+            double S = 0;
+            while (true)
+            {
+
+                double alpha = rnd.NextDouble();
+                S += Math.Log(alpha);
+                if (S < -lambda)
+                    break;
+                else
+                    ++m;
+            }
+            return m;
+            
+         }
+        public void playRandom()
+        {            
+            int numEvents = generatePoisson(40);
             generateEvents(numEvents);
             winner = (scoreHomeTeam > scoreGuestTeam || (scoreHomeTeam == scoreGuestTeam && penaltyHomeTeam > penaltyGuestTeam)) ? homeTeam : guestTeam;
         }           
